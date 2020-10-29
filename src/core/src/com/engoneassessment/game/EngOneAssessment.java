@@ -3,15 +3,17 @@ package com.engoneassessment.game;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Array;
+import com.engoneassessment.utils.RectangleRenderObject;
 import com.engoneassessment.utils.RenderObject;
 
 public class EngOneAssessment extends ApplicationAdapter {
-	Array<RenderObject> VisibleThings = new Array<RenderObject>();
+	Array<RectangleRenderObject> VisibleThings = new Array<RectangleRenderObject>();
 	SpriteBatch batch;
 	MovingPicture demo;
 	Character person;
@@ -30,10 +32,14 @@ public class EngOneAssessment extends ApplicationAdapter {
 
 		person.setX(0);
 		person.setY(0);
+		person.setWidth(32);
+		person.setHeight(32);
 	}
 
 	@Override
 	public void render () {
+		//Sets the cameras position to the centre of the
+		camera.position.set(person.getX()+person.getWidth(),person.getY()+person.getHeight(),0);
 		camera.update();
 		// tell the SpriteBatch to render in the
 		// coordinate system specified by the camera.
@@ -44,7 +50,7 @@ public class EngOneAssessment extends ApplicationAdapter {
 		demo.setY(i);
 
 		batch.begin();
-		for(RenderObject visiblething: VisibleThings ){
+		for (RenderObject visiblething : VisibleThings) {
 			visiblething.Render(batch);
 		}
 		batch.end();

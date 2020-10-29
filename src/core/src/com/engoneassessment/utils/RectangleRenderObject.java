@@ -13,9 +13,8 @@ public class RectangleRenderObject extends RenderObject {
     public float getWidth(){
         return thisRectangle().width;
     }
-    public float getHeight(){
-        return thisRectangle().height;
-    }
+    public float getHeight(){ return thisRectangle().height; }
+
     public float getX(){
         return thisRectangle().x;
     }

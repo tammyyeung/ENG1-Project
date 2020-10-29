@@ -35,4 +35,6 @@ public abstract class RenderObject implements IRenderObject {
     public void dispose(){
         texture.dispose();
     }
+
+
 }
