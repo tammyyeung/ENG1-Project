@@ -9,14 +9,30 @@ import com.engoneassessment.utils.RectangleRenderObject;
 
 public class Character extends RectangleRenderObject {
     Array<Texture> actionTextures;
+    private Integer health;
     /*
     0:stand
     1:stand_left
 
      */
 
-    public Character(Texture _texture) {
+    public Character(Texture _texture, Integer character_health) {
         super(_texture);
+        health = character_health;
+    }
+
+    public Integer getHealth(){
+        return health;
+    }
+
+    public Integer setHealth(Integer new_health){
+        health = new_health;
+        return health;
+    }
+
+    public Integer changeHealth(Integer change){
+        health += change;
+        return health;
     }
 
     public void Movement(){

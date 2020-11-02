@@ -22,6 +22,10 @@ public class RectangleRenderObject extends RenderObject {
         return thisRectangle().y;
     }
 
+    public Rectangle getRect(){
+        return thisRectangle();
+    }
+
     public void setWidth(float width){
         thisRectangle().width = width;
     }

@@ -12,6 +12,7 @@ public abstract class RenderObject implements IRenderObject {
     public RenderObject(Texture _texture,Shape2D _shape){
         texture = _texture;
         shape = _shape;
+        isRendering = true;
     }
 
     @Override
@@ -20,6 +21,10 @@ public abstract class RenderObject implements IRenderObject {
     @Override
     public void setRenderMode(boolean _isRendering) {
         isRendering = _isRendering;
+    }
+
+    public boolean getRenderMode(){
+        return isRendering;
     }
 
     @Override
